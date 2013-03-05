@@ -60,7 +60,7 @@ public class JLunarDatePicker extends JPanel {
 		cal.setTime(date);
 		cal.set(Calendar.DATE, 1);
 		cal.add(Calendar.DATE, -cal.get(Calendar.DAY_OF_WEEK) + 1);
-		int row = 0, col = 0;// 指定日期的农历位置
+		int row = 0, col = 0;//Position of Lunar Day
 		outer: for (int week = 0; week < 6; week++) {
 			for (int days = 0; days < 7; days++) {
 				// only draw if it's actually in this month
@@ -87,7 +87,7 @@ public class JLunarDatePicker extends JPanel {
 				}
 				g.drawImage(img, days * 30 + 46, week * 29 + 81, null);
 				g.drawString(LunarDayCalendar.getChinaDay((int) firstDay++),
-						days * 30 + 46 + 4, week * 29 + 81 + 20);
+						days * 30 + 46, week * 29 + 81 + 20);
 				if (firstDay == 31) {
 					firstDay = 1;
 				}
